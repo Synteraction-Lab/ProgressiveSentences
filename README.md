@@ -1,5 +1,6 @@
 # Progressive Sentences
-Description of the repository
+
+Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1) using a progressive presentation technique.
 
 ## Publications
 - [Progressive Sentences: Combining the Benefits of Word and Sentence Learning](https://www.doi.org/10.1145/3737821.3749564), MobileHCI '25 Adjunct
