@@ -1,7 +1,10 @@
 # Add specific files/folders related to your project
 
+# generated content
+output/*
+audio/*
 
-
+credential/*
 
 # System Files
 .DS_Store
