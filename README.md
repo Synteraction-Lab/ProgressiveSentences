@@ -44,16 +44,21 @@ Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1)
       using `pip install openai`
     - [fastapi](https://github.com/tiangolo/fastapi) using `pip install fastapi uvicorn`
     - [pygit2](https://pypi.org/project/pygit2/) using `pip install pygit2`
+- [Optional] Install following for text-to-speech
+    - [OpenAI TTS](https://platform.openai.com/docs/guides/text-to-speech) using `pip install openai`
+    - [GoogleCloud TextToSpeech](https://cloud.google.com/python/docs/reference/texttospeech/latest)
+      using `pip install google-cloud-texttospeech`
 - [Optional] Install following for the analysis
     - [scipy](https://pypi.org/project/scipy) using `pip install scipy`
     - [statsmodels](https://pypi.org/project/statsmodels) using `pip install statsmodels`
     - [pingouin](https://pypi.org/project/pingouin) using `pip install pingouin`
     - [seaborn](https://pypi.org/project/seaborn) using `pip install seaborn`
     - [matplotlib](https://pypi.org/project/matplotlib) using `pip install matplotlib`
-- [Optional] Create the required credential files inside `credential` folder (if you want to use
-  OpenAI audio generation)
+- [Optional] Create the required credential files inside `credential` folder (if you want to use OpenAI/GoogleCloud
+  audio generation)
     - Create a file `credential/openai_credential.json` with OpenAI credentials such
       as `{"openai_api_key": "KEY"}`
+    - Create a file `credential/google_cloud_credentials.json` with Google Service Account credentials
 
 - Install the libraries for the [frontend](frontend)
     - `cd frontend`

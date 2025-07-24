@@ -450,18 +450,6 @@ def get_all_sentences_content() -> dict[int, tuple[int, str, str, str, dict]]:
                     'Image': row['Word12.Image'],
                 },
             },
-            "words_2": {
-                1: {
-                    'L2': row['Word21.L2'],
-                    'L1': row['Word21.L1'],
-                    'Image': row['Word21.Image'],
-                },
-                2: {
-                    'L2': row['Word22.L2'],
-                    'L1': row['Word22.L1'],
-                    'Image': row['Word22.Image'],
-                },
-            }
         }
 
         if is_not_empty(row['Word13.L1']):
@@ -469,12 +457,6 @@ def get_all_sentences_content() -> dict[int, tuple[int, str, str, str, dict]]:
                 'L2': row['Word13.L2'],
                 'L1': row['Word13.L1'],
                 'Image': row['Word13.Image'],
-            }
-        if is_not_empty(row['Word23.L1']):
-            _sentence_parts['words_2'][3] = {
-                'L2': row['Word23.L2'],
-                'L1': row['Word23.L1'],
-                'Image': row['Word23.Image'],
             }
 
         _sentences[_sentence_id] = (_sentence_id, _sentence_l2, _sentence_l1, _sentence_image, _sentence_parts)

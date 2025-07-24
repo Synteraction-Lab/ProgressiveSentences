@@ -1,4 +1,7 @@
-from utilities import file_utility, openai_utility
+from utilities import file_utility, openai_utility, google_cloud_utility
+from time import sleep
+
+_ENABLE_GOOGLE_CLOUD_TTS = False
 
 _L2_SENTENCE_CSV_FILE = 'text/L2-sentences.csv'
 '''
@@ -15,4 +18,9 @@ if __name__ == "__main__":
     l2_sentences, word_gaps = file_utility.load_first_second_colum_from_csv(_L2_SENTENCE_CSV_FILE)
 
     for sentence, word_gap in zip(l2_sentences, word_gaps):
-        openai_utility.save_tts_audio(text=sentence, word_gap_millis=word_gap, directory=_AUDIO_DIRECTORY)
+        if _ENABLE_GOOGLE_CLOUD_TTS:
+            google_cloud_utility.save_tts_audio(text=sentence, word_gap_millis=word_gap, directory=_AUDIO_DIRECTORY)
+        else:
+            openai_utility.save_tts_audio(text=sentence, word_gap_millis=word_gap, directory=_AUDIO_DIRECTORY)
+
+        sleep(0.2)  # Sleep for 0.2 seconds to avoid rate limiting

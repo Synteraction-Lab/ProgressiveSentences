@@ -7,8 +7,8 @@ from backend.sentence_utility import get_all_sentences_content, get_all_particip
 from generate_sentences import get_l2_l1_mapping, get_mapped_sentence
 from utilities import file_utility
 
-_L2_IGNORE_WORDS = ['sa', 'Sa', 'sas', 'chu', 'Chu', 'chus', 'en', 'En', 'snu', 'Snu', 'er', 'eb',
-                    'ep', 'fra', 'ures', 'ig', 'x', 'X', 'xx', 'xxx',
+_L2_IGNORE_WORDS = ['han', 'Han', 'hun', 'Hun', 'en', 'En', 'er', 'et', 'opp',
+                    'pa', 'x', 'X', 'xx', 'xxx',
                     ]
 
 _PARTICIPANTS_ANSWERS_FILE = 'user_data/participants_answers.csv'
@@ -319,6 +319,8 @@ def mark_participant(participant_id: str, participant_answers_df: pd.DataFrame) 
             for _word_index, _l2_word in enumerate(_expected_l2_words):
                 # print(_word_index, _l2_word)
                 _style = _l2_text_style_map.get(_l2_word)
+                if _style is None:
+                    print(f"Style None for L2 word: {_l2_word}")
                 _style_marks[f'{_style}-Unseen-Sentences'] += _marks[_word_index]
                 _style_marks[f'{_style}-Unseen-Sentences-Max'] += 1
 
@@ -381,7 +383,7 @@ if __name__ == "__main__":
     check_duplicates()
 
     # _participant_ids = ['px']
-    _participant_ids = ['p901', 'p902', 'p903', 'p904', 'p905', 'p906', 'p907', 'p908', 'p909', 'p910', 'p911', 'p912']
+    _participant_ids = ['p1001', 'p1002', 'p1003', 'p1004']
 
     _participant_answers = file_utility.read_csv(_PARTICIPANTS_ANSWERS_FILE)
     write_results(_participant_ids, _participant_answers)

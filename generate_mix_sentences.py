@@ -3,26 +3,26 @@ import random
 _MAX_SENTENCES = 8
 
 # Define the word groups
-G1 = ['comb', 'bird', 'rain', 'hair', 'fall', 'fly', 'roof', 'sky']
-G2 = ['paint', 'sun', 'dog', 'picture', 'cloud', 'run', 'cover', 'park']
-G3 = ['wash', 'fast', 'car', 'train', 'sleep', 'cat', 'travel', 'sofa']
-G4 = ['make', 'rabbit', 'lake', 'kite', 'bear', 'swim', 'catch', 'fish']
+G1 = ['eat', 'orange', 'moon','shine', 'brightly', 'paint', 'picture']
+G2 = ['feed', 'ducks', 'cloud', 'cover', 'sun', 'climb', 'stairs']
+G3 = ['wash', 'car', 'train', 'travel', 'fast', 'sew', 'dress']
+G4 = ['make', 'kite', 'bear', 'catch', 'rabbit', 'water', 'garden']
 
 # Define word types
-nouns_G1 = {'bird', 'rain', 'hair', 'roof', 'sky'}
-verbs_G1 = {'comb', 'fall', 'fly'}
-adjectives_G1 = set()  # No adjectives identified in G1
+nouns_G1 = {'orange', 'moon', 'picture'}
+verbs_G1 = {'eat','shine', 'paint'}
+adjectives_G1 = {'brightly'}  # No adjectives identified in G1
 
-nouns_G2 = {'sun', 'dog', 'picture', 'cloud', 'park'}
-verbs_G2 = {'paint', 'run', 'cover'}
+nouns_G2 = {'ducks', 'cloud', 'sun', 'stairs'}
+verbs_G2 = {'feed', 'cover', 'climb'}
 adjectives_G2 = set()  # No adjectives identified in G2
 
-nouns_G3 = {'car', 'train', 'cat', 'sofa'}
-verbs_G3 = {'wash', 'sleep', 'travel'}
+nouns_G3 = {'car', 'train', 'dress'}
+verbs_G3 = {'wash', 'travel', 'sew'}
 adjectives_G3 = {'fast'}
 
-nouns_G4 = {'rabbit', 'lake', 'kite', 'bear', 'fish'}
-verbs_G4 = {'make', 'swim', 'catch'}
+nouns_G4 = {'kite', 'bear', 'rabbit', 'garden'}
+verbs_G4 = {'make', 'catch', 'water'}
 adjectives_G4 = set()  # No adjectives identified in G4
 
 # Combine them into respective dictionaries for easier access

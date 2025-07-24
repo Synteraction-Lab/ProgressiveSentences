@@ -51,10 +51,10 @@ def read_json_file(file_name):
         return json.load(f)
 
 
-def write_data(file_name, lines):
+def write_data(file_name, data):
     try:
-        with open(file_name, "w") as file:
-            file.writelines(lines)
+        with open(file_name, "wb") as file:
+            file.write(data)
         return True
     except Exception as e:
         logging.exception("Failed to write to %s", file_name)

@@ -355,7 +355,6 @@ def plot_grouped_boxplots_subplots(all_data, all_measures_group, title, show_p_v
             pairs = [(unique_sessions[j], unique_sessions[k]) for j in range(len(unique_sessions)) for k in
                      range(j + 1, len(unique_sessions))]
             line_styles = ['-', '--', ':']
-            _index = 0
             for idx, (session1, session2) in enumerate(pairs):
                 data1 = melted_subset[melted_subset[_SESSION_ID_COLUMN] == session1]['Score']
                 data2 = melted_subset[melted_subset[_SESSION_ID_COLUMN] == session2]['Score']
@@ -366,17 +365,15 @@ def plot_grouped_boxplots_subplots(all_data, all_measures_group, title, show_p_v
                 else:
                     _, p = stats.wilcoxon(data1, data2)
 
-
                 if p < 0.1:
                     # Annotate the p-value on the plot
-                    y, h, col = melted_subset['Score'].max() + (_index + 1) * 0.75, 0.2, 'k'
+                    y, h, col = melted_subset['Score'].max() + (idx + 1) * 0.8, 0.2, 'k'
                     x1, x2 = unique_sessions.tolist().index(session1), unique_sessions.tolist().index(session2)
                     ax.plot([x1, x1, x2, x2], [y, y + h, y + h, y], lw=1.5, c=col,
                             linestyle=line_styles[idx % len(line_styles)])
                     ax.text((x1 + x2) * .5, y + h, f"{'**' if p < 0.001 else '*' if p < 0.05 else ''} p = {p:.3f}",
                             ha='center',
                             va='bottom', color=col, fontsize=10)
-                    _index += 1
 
         # Add legend for mean value line (only for the first subplot)
         if i == 1:
@@ -410,7 +407,7 @@ if __name__ == '__main__':
 
     # Combine all measures into a dictionary for easy looping
     _measure_groups = {
-        'User Ratings (1-7 Likert)': (_measures_0_7, (0, 11), np.arange(0, 8, 1)),
+        'User Ratings (1-7 Likert)': (_measures_0_7, (0, 10.5), np.arange(0, 8, 1)),
     }
 
     setup_logger('log_analysis_ratings.log')

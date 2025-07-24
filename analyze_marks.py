@@ -17,11 +17,11 @@ _measures_day = [
     'Unseen-Sentence-Recall',
 ]
 
-DAY = 'Day8'
+DAY = 'Day1'
 
 # Combine all measures into a dictionary for easy looping
 _measure_groups = {
-    f'{DAY} Cued Recall': (_measures_day, (0, 9.5), np.arange(0, 9, 1)),
+    f'{DAY} Cued Recall': (_measures_day, (0, 10.5), np.arange(0, 8, 1)),
 }
 
 # Load the data from CSV
