@@ -1,11 +1,10 @@
 # Change log (version history)
 
 ### main
-- description
+- contains the `Study1` content
 
+# pilot4
+- Pilot 4 content
 
-## TODO
-- 
-
-## Known issues/limitations
-- 
+# study1
+- Study 1 content
