@@ -1,9 +1,9 @@
 # Progressive Sentences
 
-Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1) using a progressive presentation technique.
+Learning secondary language (L2) sentences and their meaning (e.g., English, L1) using a progressive presentation technique.
 
 ## Publications
-- [Progressive Sentences: Combining the Benefits of Word and Sentence Learning](https://www.doi.org/10.1145/3737821.3749564), MobileHCI '25 Adjunct
+- [Progressive Sentences: Combining the Benefits of Word and Sentence Learning](https://www.doi.org/10.1145/3737821.3749564), MobileHCI'25 Adjunct
   - Camera Ready [PDF](paper/MobileHCI2025_ProgressiveSentences.pdf)
 ```
 @inproceedings{janaka_progressive_2025,
@@ -44,7 +44,7 @@ Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1)
       using `pip install openai`
     - [fastapi](https://github.com/tiangolo/fastapi) using `pip install fastapi uvicorn`
     - [pygit2](https://pypi.org/project/pygit2/) using `pip install pygit2`
-- [Optional] Install following for the analysis
+- [Optional] Install the following for the analysis
     - [scipy](https://pypi.org/project/scipy) using `pip install scipy`
     - [statsmodels](https://pypi.org/project/statsmodels) using `pip install statsmodels`
     - [pingouin](https://pypi.org/project/pingouin) using `pip install pingouin`
@@ -64,13 +64,13 @@ Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1)
 
 - Running the sentence learning
     - Run by `python main.py`
-        - Then open the hosted url (e.g., [http://localhost:5173/](http://localhost:5173/)) in a
+        - Then open the hosted URL (e.g., [http://localhost:5173/](http://localhost:5173/)) in a
           browser
 
 - Generating L2 words
     - Run the L2 word generation via `python generate_words.py` after adding `text/L1-words.csv`
         - Results will be in `output/L1-L2-words.csv`
-        - If there are issues with `numpy` downgrade it using `pip install numpy==1.*`
+        - If there are issues with `numpy`, downgrade it using `pip install numpy==1.*`
 
 - Generating L2 sentences
     - Run the L2 sentence generation via `python generate_sentences.py` after
@@ -85,7 +85,7 @@ Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1)
     - Run the marking via `python mark_answers.py` after adding `user_data/participants_answers.csv`
         - If the script can not detect the correct one, you need to add marks by inputting correct values by commas
         - Results will be in `output/participants_answers_marks.csv` or `output/participants_marks_summary.csv`
-    - To analyze marks run `python analyze_marks.py` (assuming marks are at `output/participants_marks_summary.csv`)
+    - To analyze marks, run `python analyze_marks.py` (assuming marks are at `output/participants_marks_summary.csv`)
     - To analyze ratings, use `python analyze_ratings.py` after adding `user_data/participants_ratings.csv`
     - To convert the long format data to wide format (e.g., JASP), use `python convert_csv_to_anova_wide.py`
 
@@ -93,14 +93,14 @@ Learning secondary langauge (L2) sentences and their meaning (e.g., English, L1)
 - Generate L1 sentences from groups
     - Update the `generate_mix_sentences.py` with correct groups, and the nouns/verbs/adjectives based on groups
     - Generate the sentences using `python generate_mix_sentences.py`
-    - To verify the generated sentences have mix of groups,
+    - To verifythat  the generated sentences have a mix of groups,
         - Copy the sentences to `text/L1-sentences.csv`
         - Generate L2 sentences using `python generate_sentences.py`
         - Copy the generate L2 sentences to `text/L2-sentences.csv`
         - Run `python analyze_sentences.py` to get the results
 
-- Verify all multimedia files (images, audios) are available
-    - Run the analysis via `python analyze_multimedia_files.py` which verifies all the mentioned multimedia files
+- Verify all multimedia files (images, audio) are available
+    - Run the analysis via `python analyze_multimedia_files.py` ,which verifies all the mentioned multimedia files
       in `backend/data/Sentence_elements.csv` are available
 
 ## References
